@@ -1,0 +1,180 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container-songs{
+    width: 100%;
+    z-index: 10;
+    background-color: #17202A;
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.container{
+    position: relative;
+    width: 95%;
+    z-index: 11;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin:auto;
+    margin-top: -40px;
+    background-color:  #006B78;
+    box-shadow: 5px 4px 10px -2px #000000;
+}
+.container h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.container h4{
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.playlist{/*Contiene a las canciones y es donde haremos grid*/
+    width: 100%;
+    display: grid;
+    grid-gap: 30px;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    padding: 20px;
+}
+.font-primary{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.song{
+    width: 200px;
+    height: 320px;
+    display: flex;
+    opacity: .8;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: #17151e;
+    overflow: hidden;
+    border-radius: 15px;
+    transition: all .3s ease-in;
+    box-shadow: 5px 4px 10px -2px #000000;
+}
+.song:hover{
+    transform: scale(1.1);
+}
+
+.song #image{
+    width: 200px;
+    height: 40%;
+}
+.song #image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.song #description{
+    width: 100%;
+    height: 25%;
+    font-size: 12px;
+    color: ghostwhite;
+    text-align: center;
+    border-bottom: 1px solid #424242;
+}
+.song #description h1{
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.song #buttons{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.song #buttons #controls{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+}
+.song #buttons #controls button{
+    border: 0;
+    font-size: 40px;
+    margin-right: 10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+.song #buttons #controls button:last-child{
+    margin: 0;
+}
+.song #buttons #feelings{
+    width: 100%;
+    height: 40%;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.song #buttons #feelings i:first-child{
+    color: red;
+    font-size: 32px;
+}
+#seleccionar{
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    color: #006B78;
+    border: 2px solid #006B78;
+    background-color:transparent;
+}
+.remove{
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    color: red;
+    border: 2px solid red;
+    background-color:transparent;
+}
+.song #buttons #feelings i:last-child{
+    color: gray;
+    font-size: 32px;
+}
+@keyframes rotar{
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(360deg);
+    }
+}
+.loaded1,.loaded2{
+    border-top: 10px dotted #006B78;
+    border-bottom: 10px solid transparent;
+    border-left: 10px dotted #006B78;
+    border-right: 10px solid transparent;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    z-index: 12;
+    display: none;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: rotar 1s linear infinite;
+}
+.loaded2{
+    border-top: 10px dotted #17151e;
+    border-bottom: 10px solid transparent;
+    border-left: 10px dotted #17151e;
+    border-right: 10px solid transparent;
+}
